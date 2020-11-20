@@ -1,6 +1,7 @@
 import argparse
 import configparser
 import collections
+from logchecker.log_checker import check_log_file
 
 Config = collections.namedtuple("Config", ["url", "key"])
 
@@ -17,6 +18,7 @@ def main():
     args = parser.parse_args()
 
     config = parse_config_file(args.c)
+    check_log_file(args.f, config.url, config.key)
 
 def parse_config_file(file):
     config = configparser.ConfigParser()
