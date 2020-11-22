@@ -1,9 +1,18 @@
 import argparse
 import configparser
 import collections
+import os
+
 from logchecker.log_checker import check_log_file
 
 Config = collections.namedtuple("Config", ["url", "key"])
+
+
+def is_valid_file(parser, arg):
+    if not os.path.exists(arg):
+        parser.error("The file %s does not exist!" % arg)
+    else:
+        return arg
 
 
 def main():
@@ -12,7 +21,10 @@ def main():
         "-c", help="Config file path", type=argparse.FileType("r"), required=True
     )
     parser.add_argument(
-        "-f", help="Log file path", type=argparse.FileType("r"), required=True
+        "-f",
+        help="Log file path",
+        type=lambda x: is_valid_file(parser, x),
+        required=True,
     )
     parser.add_argument("-o", help="Output file path", type=argparse.FileType("w+"))
     args = parser.parse_args()
