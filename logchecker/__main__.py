@@ -18,19 +18,26 @@ def is_valid_file(parser, arg):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument(
-        "-c", help="Config file path", type=argparse.FileType("r"), required=True
+        "-c",
+        "--config",
+        help="Config file path",
+        type=argparse.FileType("r"),
+        required=True,
     )
     parser.add_argument(
         "-f",
+        "--file",
         help="Log file path",
         type=lambda x: is_valid_file(parser, x),
         required=True,
     )
-    parser.add_argument("-o", help="Output file path", type=argparse.FileType("w+"))
+    parser.add_argument(
+        "-o", "--output", help="Output file path", type=argparse.FileType("w+")
+    )
     args = parser.parse_args()
 
-    config = parse_config_file(args.c)
-    check_log_file(args.f, config.url, config.key, args.o)
+    config = parse_config_file(args.config)
+    check_log_file(args.file, config.url, config.key, args.output)
 
 
 def parse_config_file(file):

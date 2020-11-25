@@ -3,27 +3,33 @@ import pyeti
 import re
 import Evtx.Evtx as evtx
 import os
+import sys
 
 
 def check_log_file(file, url, key, output=None):
     _, file_extension = os.path.splitext(file)
+    print("reading file", file=sys.stderr)
     if file_extension == ".evtx":
         log = read_evtx_file(file)
     else:
         log = read_text_file(file)
+    print("parsing file", file=sys.stderr)
     addresses = parse_log_file(log)
+    print("looking in database", file=sys.stderr)
+    results = []
     api = pyeti.YetiApi(url, api_key=key)
     for adr, logs in addresses.items():
         result = {"address": adr}
         result["yeti"] = api.observable_search(value=adr)
         result["logs"] = logs
-        if output:
-            json.dump(result, output, indent=4, sort_keys=True)
-        else:
-            print(json.dumps(result, indent=4, sort_keys=True))
+        results.append(result)
 
+    print("writing results", file=sys.stderr)
     if output:
+        json.dump(results, output, indent=4, sort_keys=True)
         output.close()
+    else:
+        print(json.dumps(results, indent=4, sort_keys=True))
 
 
 def parse_log_file(log):

@@ -1,2 +1,4 @@
 /venv/
 /logchecker/__pycache__/
+.idea/
+pyeti/

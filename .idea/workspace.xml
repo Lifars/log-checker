@@ -21,7 +21,6 @@
   <component name="ChangeListManager">
     <list default="true" id="1f3b30d9-b972-4326-8106-090c5e71dbc0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/log_checker.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/log_checker.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logchecker/__main__.py" beforeDir="false" afterPath="$PROJECT_DIR$/logchecker/__main__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logchecker/log_checker.py" beforeDir="false" afterPath="$PROJECT_DIR$/logchecker/log_checker.py" afterDir="false" />
@@ -49,6 +48,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="JupyterTrust" id="f12a90ad-7af0-4eaf-b467-519e2969e149" />
   <component name="ProjectId" id="1kNZTLnChtOKG0h5JWQRPgEfgOt" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -59,6 +59,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last.edited.regexp" value="Sample Text" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
@@ -77,7 +78,7 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/logchecker/__main__.py" />
-      <option name="PARAMETERS" value="-c D:\my\praca\log_checker\config.txt -f D:\my\praca\log_checker\auth.log -o D:\my\praca\log_checker\out.txt" />
+      <option name="PARAMETERS" value="-c D:\my\praca\log_checker\config.txt -f D:\my\praca\log_checker\auth2.log -o D:\my\praca\log_checker\out" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -118,6 +119,7 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -136,12 +138,17 @@
       <workItem from="1605703158258" duration="1746000" />
       <workItem from="1605879518746" duration="11707000" />
       <workItem from="1606052829882" duration="1172000" />
-      <workItem from="1606054400044" duration="12988000" />
+      <workItem from="1606054400044" duration="13704000" />
+      <workItem from="1606144488039" duration="2615000" />
+      <workItem from="1606164097504" duration="266000" />
+      <workItem from="1606164477238" duration="454000" />
+      <workItem from="1606165119209" duration="1582000" />
+      <workItem from="1606308332227" duration="2067000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="2" />
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -156,26 +163,34 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606081280231">
+    <state x="361" y="53" key="#Plugins" timestamp="1606165267861">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1606081280231" />
-    <state width="1493" height="185" key="GridCell.Tab.0.bottom" timestamp="1606081209237">
+    <state x="361" y="53" key="#Plugins/0.0.1536.824@0.0.1536.824" timestamp="1606165267861" />
+    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606310402070">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="185" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1606081209237" />
-    <state width="1493" height="185" key="GridCell.Tab.0.center" timestamp="1606081209237">
+    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1606310402070" />
+    <state x="449" y="148" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1606164533810">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="185" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1606081209237" />
-    <state width="1493" height="185" key="GridCell.Tab.0.left" timestamp="1606081209237">
+    <state x="449" y="148" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1536.824@0.0.1536.824" timestamp="1606164533810" />
+    <state width="1493" height="185" key="GridCell.Tab.0.bottom" timestamp="1606310328716">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="185" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1606081209237" />
-    <state width="1493" height="185" key="GridCell.Tab.0.right" timestamp="1606081209237">
+    <state width="1493" height="185" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1606310328716" />
+    <state width="1493" height="185" key="GridCell.Tab.0.center" timestamp="1606310328716">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="185" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1606081209237" />
+    <state width="1493" height="185" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1606310328716" />
+    <state width="1493" height="185" key="GridCell.Tab.0.left" timestamp="1606310328716">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="185" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1606310328716" />
+    <state width="1493" height="185" key="GridCell.Tab.0.right" timestamp="1606310328716">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="185" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1606310328716" />
     <state width="1493" height="260" key="GridCell.Tab.1.bottom" timestamp="1605901518143">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -206,6 +221,6 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/log_checker$setup.coverage" NAME="setup Coverage Results" MODIFIED="1605703268636" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pyeti" />
-    <SUITE FILE_PATH="coverage/log_checker$__main__.coverage" NAME="__main__ Coverage Results" MODIFIED="1606081396676" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/logchecker" />
+    <SUITE FILE_PATH="coverage/log_checker$__main__.coverage" NAME="__main__ Coverage Results" MODIFIED="1606310328708" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/logchecker" />
   </component>
 </project>
