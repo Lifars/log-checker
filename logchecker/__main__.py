@@ -34,10 +34,49 @@ def main():
     parser.add_argument(
         "-o", "--output", help="Output file path", type=argparse.FileType("w+")
     )
+    parser.add_argument(
+        "-a",
+        "--address",
+        default=False,
+        action="store_true",
+        help="Search only for ip addresses",
+    )
+    parser.add_argument(
+        "-d",
+        "--domain",
+        default=False,
+        action="store_true",
+        help="Search only for domains",
+    )
+    parser.add_argument(
+        "-H",
+        "--hash",
+        default=False,
+        action="store_true",
+        help="Search only for hashes",
+    )
+
+    parser.add_argument(
+        "-A",
+        "--all",
+        default=False,
+        action="store_true",
+        help="show all values in logs",
+    )
+
     args = parser.parse_args()
 
     config = parse_config_file(args.config)
-    check_log_file(args.file, config.url, config.key, args.output)
+    check_log_file(
+        args.file,
+        config.url,
+        config.key,
+        output=args.output,
+        address=args.address,
+        domain=args.domain,
+        hash=args.hash,
+        all=args.all,
+    )
 
 
 def parse_config_file(file):

@@ -20,7 +20,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1f3b30d9-b972-4326-8106-090c5e71dbc0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logchecker/__main__.py" beforeDir="false" afterPath="$PROJECT_DIR$/logchecker/__main__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logchecker/log_checker.py" beforeDir="false" afterPath="$PROJECT_DIR$/logchecker/log_checker.py" afterDir="false" />
@@ -59,7 +58,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last.edited.regexp" value="Sample Text" />
+    <property name="last.edited.regexp" value="mkyong.t.t.to" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
@@ -78,7 +77,7 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/logchecker/__main__.py" />
-      <option name="PARAMETERS" value="-c D:\my\praca\log_checker\config.txt -f D:\my\praca\log_checker\auth2.log -o D:\my\praca\log_checker\out" />
+      <option name="PARAMETERS" value="-c D:\my\praca\log_checker\config.txt -f D:\my\praca\log_checker\aaa.txt -o D:\my\praca\log_checker\out.txt -A" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -143,7 +142,10 @@
       <workItem from="1606164097504" duration="266000" />
       <workItem from="1606164477238" duration="454000" />
       <workItem from="1606165119209" duration="1582000" />
-      <workItem from="1606308332227" duration="2067000" />
+      <workItem from="1606308332227" duration="9272000" />
+      <workItem from="1606471671322" duration="285000" />
+      <workItem from="1606472010144" duration="11505000" />
+      <workItem from="1606679470358" duration="3792000" />
     </task>
     <servers />
   </component>
@@ -167,52 +169,65 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="361" y="53" key="#Plugins/0.0.1536.824@0.0.1536.824" timestamp="1606165267861" />
-    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606310402070">
+    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606682455586">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1606310402070" />
+    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1606682455586" />
     <state x="449" y="148" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1606164533810">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="449" y="148" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1536.824@0.0.1536.824" timestamp="1606164533810" />
-    <state width="1493" height="185" key="GridCell.Tab.0.bottom" timestamp="1606310328716">
+    <state width="1493" height="162" key="GridCell.Tab.0.bottom" timestamp="1606683414970">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="185" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1606310328716" />
-    <state width="1493" height="185" key="GridCell.Tab.0.center" timestamp="1606310328716">
+    <state width="1493" height="162" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1606683414970" />
+    <state width="1493" height="162" key="GridCell.Tab.0.center" timestamp="1606683414970">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="185" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1606310328716" />
-    <state width="1493" height="185" key="GridCell.Tab.0.left" timestamp="1606310328716">
+    <state width="1493" height="162" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1606683414970" />
+    <state width="1493" height="162" key="GridCell.Tab.0.left" timestamp="1606683414970">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="185" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1606310328716" />
-    <state width="1493" height="185" key="GridCell.Tab.0.right" timestamp="1606310328716">
+    <state width="1493" height="162" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1606683414970" />
+    <state width="1493" height="162" key="GridCell.Tab.0.right" timestamp="1606683414970">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="185" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1606310328716" />
-    <state width="1493" height="260" key="GridCell.Tab.1.bottom" timestamp="1605901518143">
+    <state width="1493" height="162" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1606683414970" />
+    <state width="1493" height="260" key="GridCell.Tab.1.bottom" timestamp="1606519909974">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="260" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1605901518143" />
-    <state width="1493" height="260" key="GridCell.Tab.1.center" timestamp="1605901518127">
+    <state width="1493" height="260" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1606519909974" />
+    <state width="1493" height="260" key="GridCell.Tab.1.center" timestamp="1606519909974">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="260" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1605901518127" />
-    <state width="1493" height="260" key="GridCell.Tab.1.left" timestamp="1605901518127">
+    <state width="1493" height="260" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1606519909974" />
+    <state width="1493" height="260" key="GridCell.Tab.1.left" timestamp="1606519909974">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="260" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1605901518127" />
-    <state width="1493" height="260" key="GridCell.Tab.1.right" timestamp="1605901518143">
+    <state width="1493" height="260" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1606519909974" />
+    <state width="1493" height="260" key="GridCell.Tab.1.right" timestamp="1606519909974">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="260" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1605901518143" />
+    <state width="1493" height="260" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1606519909974" />
     <state x="277" y="57" key="SettingsEditor" timestamp="1605901059453">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="277" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1605901059453" />
+    <state x="611" y="198" key="refactoring.ChangeSignatureDialog" timestamp="1606494223574">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="611" y="198" key="refactoring.ChangeSignatureDialog/0.0.1536.824@0.0.1536.824" timestamp="1606494223574" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/logchecker/log_checker.py</url>
+          <line>15</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
         <watch expression="addresses[addr]" language="Python" />
@@ -221,6 +236,6 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/log_checker$setup.coverage" NAME="setup Coverage Results" MODIFIED="1605703268636" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pyeti" />
-    <SUITE FILE_PATH="coverage/log_checker$__main__.coverage" NAME="__main__ Coverage Results" MODIFIED="1606310328708" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/logchecker" />
+    <SUITE FILE_PATH="coverage/log_checker$__main__.coverage" NAME="__main__ Coverage Results" MODIFIED="1606682457079" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/logchecker" />
   </component>
 </project>
