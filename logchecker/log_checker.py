@@ -4,6 +4,7 @@ import re
 import Evtx.Evtx as evtx
 import os
 import sys
+import csv
 
 
 def check_log_file(file, url, key, **kwargs):
@@ -30,18 +31,33 @@ def check_log_file(file, url, key, **kwargs):
             result["tags"] = []
             result["created"] = ""
             result["sources"] = []
-        result["logs"] = logs
+        result["log"] = logs
         if yeti or a:
             results.append(result)
 
     print("writing results", file=sys.stderr)
 
     output = kwargs.get("output", None)
+    c = kwargs.get("csv", None)
     if output:
-        json.dump(results, output, indent=4, sort_keys=True)
+        if c:
+            fields = ["value", "tags", "created", "sources", "log"]
+            results = flatten(map(unpack_logs, map(csv_row, results)))
+            writer = csv.DictWriter(output, fieldnames=fields)
+            writer.writeheader()
+            writer.writerows(results)
+        else:
+            json.dump(results, output, indent=4, sort_keys=True)
         output.close()
     else:
-        print(json.dumps(results, indent=4, sort_keys=True))
+        if c:
+            fields = ["value", "tags", "created", "sources", "log"]
+            results = flatten(map(unpack_logs, map(csv_row, results)))
+            print(",".join(fields))
+            for result in results:
+                print(",".join(result.values()))
+        else:
+            print(json.dumps(results, indent=4, sort_keys=True))
 
     print("finished", file=sys.stderr)
 
@@ -88,3 +104,30 @@ def read_text_file(file):
     with open(file) as f:
         log = f.read().splitlines()
     return log
+
+
+def dict_to_string(d):
+    return " ".join(["{}:{}".format(key, val) for key, val in d.items()])
+
+
+def list_to_string(li):
+    return " ".join(li)
+
+
+def csv_row(d):
+    d["tags"] = list_to_string([dict_to_string(tag) for tag in d["tags"]])
+    d["sources"] = list_to_string(d["sources"])
+    return d
+
+
+def unpack_logs(d):
+    result = []
+    for log in d["log"]:
+        new = d.copy()
+        new["log"] = log
+        result.append(new)
+    return result
+
+
+def flatten(li):
+    return [item for sublist in li for item in sublist]

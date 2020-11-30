@@ -64,6 +64,14 @@ def main():
         help="show all values in logs",
     )
 
+    parser.add_argument(
+        "-C",
+        "--csv",
+        default=False,
+        action="store_true",
+        help="output in csv format",
+    )
+
     args = parser.parse_args()
 
     config = parse_config_file(args.config)
@@ -76,6 +84,7 @@ def main():
         domain=args.domain,
         hash=args.hash,
         all=args.all,
+        csv=args.csv,
     )
 
 
