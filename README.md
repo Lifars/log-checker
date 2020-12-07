@@ -38,8 +38,7 @@ The following command will find all IP addresses, domain names and hashes in `au
 	  -f FILE, --file FILE  [REQUIRED] Log file path.
 	  -o OUTPUT, --output OUTPUT
 							Output file path. If file does not exist, creates new
-							file. If not present, output is printed to stout If
-							not specified, output is printed to STDOUT.
+							file.If not specified, output is printed to STDOUT.
 	  -a, --address         Search only for ip addresses. If none of the address,
 							domain or hash flag is specified, it search for all
 							mentioned.
