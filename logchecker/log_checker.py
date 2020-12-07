@@ -38,32 +38,51 @@ def check_log_file(file, url, key, **kwargs):
     print("writing results", file=sys.stderr)
 
     output = kwargs.get("output", None)
-    c = kwargs.get("csv", None)
+    c = kwargs.get("csv", False)
+    j = kwargs.get("json", False)
     if output:
-        if c:
+        if j:
+            json.dump(results, output, indent=4, sort_keys=True)
+        else:
             fields = ["value", "tags", "created", "sources", "log"]
             results = flatten(map(unpack_logs, map(csv_row, results)))
             writer = csv.DictWriter(output, fieldnames=fields)
             writer.writeheader()
             writer.writerows(results)
-        else:
-            json.dump(results, output, indent=4, sort_keys=True)
         output.close()
     else:
-        if c:
+        if j:
+            print(json.dumps(results, indent=4, sort_keys=True))
+        else:
             fields = ["value", "tags", "created", "sources", "log"]
             results = flatten(map(unpack_logs, map(csv_row, results)))
             print(",".join(fields))
             for result in results:
                 print(",".join(result.values()))
-        else:
-            print(json.dumps(results, indent=4, sort_keys=True))
 
     print("finished", file=sys.stderr)
 
 
 def parse_log_file(log, **kwargs):
     addr_pattern = re.compile("(?:[0-9]{1,3}\.){3}[0-9]{1,3}")
+    ipv6_pattern = re.compile(
+        "(([0-9a-fA-F]{1,4}:){7,7}[0-9a-fA-F]{1,4}|"
+        "fe80:(:[0-9a-fA-F]{0,4}){0,4}%[0-9a-zA-Z]{1,}|"
+        "::(ffff(:0{1,4}){0,1}:){0,1}"
+        "((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}"
+        "(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])|"
+        "([0-9a-fA-F]{1,4}:){1,4}:"
+        "((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}"
+        "(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9]))"
+        ":((:[0-9a-fA-F]{1,4}){1,7}|:)|"
+        "[0-9a-fA-F]{1,4}:((:[0-9a-fA-F]{1,4}){1,6})|"
+        "([0-9a-fA-F]{1,4}:){1,2}(:[0-9a-fA-F]{1,4}){1,5}|"
+        "([0-9a-fA-F]{1,4}:){1,3}(:[0-9a-fA-F]{1,4}){1,4}|"
+        "([0-9a-fA-F]{1,4}:){1,4}(:[0-9a-fA-F]{1,4}){1,3}|"
+        "([0-9a-fA-F]{1,4}:){1,5}(:[0-9a-fA-F]{1,4}){1,2}|"
+        "([0-9a-fA-F]{1,4}:){1,6}:[0-9a-fA-F]{1,4}|"
+        "([0-9a-fA-F]{1,4}:){1,7}:|"
+    )
     domain_pattern = re.compile("(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?\.)+[a-z]{2,6}")
     hash_pattern = re.compile("[0-9a-f]{64}|[0-9a-f]{40}|[0-9a-f]{32}")
     a = kwargs.get("address", False)
@@ -74,6 +93,11 @@ def parse_log_file(log, **kwargs):
     for line in log:
         if (not flags) or a:
             addr = addr_pattern.search(line)
+            if addr:
+                addr = addr.group(0)
+                values.setdefault(addr, []).append(line)
+
+            addr = ipv6_pattern.search(line)
             if addr:
                 addr = addr.group(0)
                 values.setdefault(addr, []).append(line)

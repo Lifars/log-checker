@@ -22,6 +22,7 @@
     <list default="true" id="1f3b30d9-b972-4326-8106-090c5e71dbc0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logchecker/__main__.py" beforeDir="false" afterPath="$PROJECT_DIR$/logchecker/__main__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logchecker/log_checker.py" beforeDir="false" afterPath="$PROJECT_DIR$/logchecker/log_checker.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pyeti/pyeti/api.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyeti/pyeti/api.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pyeti/pyeti/scripts/addfiles.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyeti/pyeti/scripts/addfiles.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pyeti/pyeti/scripts/cli.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyeti/pyeti/scripts/cli.py" afterDir="false" />
@@ -30,6 +31,7 @@
       <change beforePath="$PROJECT_DIR$/pyeti/tests/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyeti/tests/test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pyeti/tests/test_cli.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyeti/tests/test_cli.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pyeti/tests/test_observables.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyeti/tests/test_observables.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/setup.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +60,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last.edited.regexp" value="mkyong.t.t.to" />
+    <property name="last.edited.regexp" value="" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
@@ -77,7 +79,7 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/logchecker/__main__.py" />
-      <option name="PARAMETERS" value="-c D:\my\praca\log_checker\config.txt -f D:\my\praca\log_checker\aaa.txt -o D:\my\praca\log_checker\out.txt -C" />
+      <option name="PARAMETERS" value="-c D:\my\praca\log_checker\config.txt -f D:\my\praca\log_checker\aaa.txt -o D:\my\praca\log_checker\out.txt -A" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -149,7 +151,7 @@
       <workItem from="1607076905024" duration="44000" />
       <workItem from="1607076995395" duration="2856000" />
       <workItem from="1607079957789" duration="6719000" />
-      <workItem from="1607332994586" duration="6899000" />
+      <workItem from="1607332994586" duration="10427000" />
     </task>
     <servers />
   </component>
@@ -177,6 +179,6 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/log_checker$setup.coverage" NAME="setup Coverage Results" MODIFIED="1605703268636" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pyeti" />
-    <SUITE FILE_PATH="coverage/log_checker$__main__.coverage" NAME="__main__ Coverage Results" MODIFIED="1607347835910" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/logchecker" />
+    <SUITE FILE_PATH="coverage/log_checker$__main__.coverage" NAME="__main__ Coverage Results" MODIFIED="1607353557946" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/logchecker" />
   </component>
 </project>
