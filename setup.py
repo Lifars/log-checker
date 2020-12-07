@@ -14,7 +14,5 @@ setup(
         "configparser",
         "python-evtx",
     ],
-    entry_points={
-            'console_scripts': ['logchecker=logchecker.__main__:main']
-        },
+    entry_points={"console_scripts": ["logchecker=logchecker.__main__:main"]},
 )

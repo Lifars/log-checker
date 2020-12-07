@@ -22,7 +22,7 @@ def main():
         "-c",
         "--config",
         help="Config file path. Config file should contain url of YETI database, authorization key and output format. If it is present, it overrides --url, --key and  --csv/--json options.",
-        type=argparse.FileType("r")
+        type=argparse.FileType("r"),
     )
     parser.add_argument(
         "-f",
@@ -87,18 +87,8 @@ def main():
         help="Output in JSON format. By default output is in CSV format.",
     )
 
-    parser.add_argument(
-        "-u",
-        "--url",
-        help="URL of YETI instance.",
-        type=str
-    )
-    parser.add_argument(
-        "-k",
-        "--key",
-        help="API key for YETI.",
-        type=str
-    )
+    parser.add_argument("-u", "--url", help="URL of YETI instance.", type=str)
+    parser.add_argument("-k", "--key", help="API key for YETI.", type=str)
 
     args = parser.parse_args()
 
@@ -129,7 +119,7 @@ def main():
         hash=args.hash,
         all=args.all,
         csv=csv,
-        json=json
+        json=json,
     )
 
 

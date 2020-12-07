@@ -11,9 +11,9 @@ def check_log_file(file, url, key, **kwargs):
     _, file_extension = os.path.splitext(file)
     print("reading file", file=sys.stderr)
     if file_extension == ".evtx":
-        log = read_evtx_file(file)
+        log = __read_evtx_file(file)
     else:
-        log = read_text_file(file)
+        log = __read_text_file(file)
     print("parsing file", file=sys.stderr)
     values = parse_log_file(log)
     print("looking in database", file=sys.stderr)
@@ -45,7 +45,7 @@ def check_log_file(file, url, key, **kwargs):
             json.dump(results, output, indent=4, sort_keys=True)
         else:
             fields = ["value", "tags", "created", "sources", "log"]
-            results = flatten(map(unpack_logs, map(csv_row, results)))
+            results = __flatten(map(__unpack_logs, map(__csv_row, results)))
             writer = csv.DictWriter(output, fieldnames=fields)
             writer.writeheader()
             writer.writerows(results)
@@ -55,7 +55,7 @@ def check_log_file(file, url, key, **kwargs):
             print(json.dumps(results, indent=4, sort_keys=True))
         else:
             fields = ["value", "tags", "created", "sources", "log"]
-            results = flatten(map(unpack_logs, map(csv_row, results)))
+            results = __flatten(map(__unpack_logs, map(__csv_row, results)))
             print(",".join(fields))
             for result in results:
                 print(",".join(result.values()))
@@ -118,33 +118,33 @@ def parse_log_file(log, **kwargs):
     return values
 
 
-def read_evtx_file(file):
+def __read_evtx_file(file):
     with evtx.Evtx(file) as f:
         log = list(map(evtx.Record.xml, f.records()))
     return log
 
 
-def read_text_file(file):
+def __read_text_file(file):
     with open(file) as f:
         log = f.read().splitlines()
     return log
 
 
-def dict_to_string(d):
+def __dict_to_string(d):
     return " ".join(["{}:{}".format(key, val) for key, val in d.items()])
 
 
-def list_to_string(li):
+def __list_to_string(li):
     return " ".join(li)
 
 
-def csv_row(d):
-    d["tags"] = list_to_string([dict_to_string(tag) for tag in d["tags"]])
-    d["sources"] = list_to_string(d["sources"])
+def __csv_row(d):
+    d["tags"] = __list_to_string([__dict_to_string(tag) for tag in d["tags"]])
+    d["sources"] = __list_to_string(d["sources"])
     return d
 
 
-def unpack_logs(d):
+def __unpack_logs(d):
     result = []
     for log in d["log"]:
         new = d.copy()
@@ -153,5 +153,5 @@ def unpack_logs(d):
     return result
 
 
-def flatten(li):
+def __flatten(li):
     return [item for sublist in li for item in sublist]
