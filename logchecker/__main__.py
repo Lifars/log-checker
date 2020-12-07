@@ -20,56 +20,79 @@ def main():
     parser.add_argument(
         "-c",
         "--config",
-        help="Config file path",
-        type=argparse.FileType("r"),
-        required=True,
+        help="Config file path. Config file should contain url of YETI database, authorization key and output format. If it is present, it overrides --url, --key and  --csv/--json options.",
+        type=argparse.FileType("r")
     )
     parser.add_argument(
         "-f",
         "--file",
-        help="Log file path",
+        help="[REQUIRED] Log file path.",
         type=lambda x: is_valid_file(parser, x),
         required=True,
     )
     parser.add_argument(
-        "-o", "--output", help="Output file path", type=argparse.FileType("w+")
+        "-o",
+        "--output",
+        help="Output file path. If file does not exist, creates new file. If not present, output is printed to stout "
+        "If not specified, output is printed to stout.",
+        type=argparse.FileType("w+"),
     )
     parser.add_argument(
         "-a",
         "--address",
         default=False,
         action="store_true",
-        help="Search only for ip addresses",
+        help="Search only for ip addresses. If none of the address, "
+        "domain or hash flag is specified, it search for all mentioned.",
     )
     parser.add_argument(
         "-d",
         "--domain",
         default=False,
         action="store_true",
-        help="Search only for domains",
+        help="Search only for domains. If none of the address, "
+        "domain or hash flag is specified, it search for all mentioned.",
     )
     parser.add_argument(
         "-H",
         "--hash",
         default=False,
         action="store_true",
-        help="Search only for hashes",
+        help="Search only for hashes. If none of the address, "
+        "domain or hash flag is specified, it search for all mentioned.",
     )
-
     parser.add_argument(
         "-A",
         "--all",
         default=False,
         action="store_true",
-        help="show all values in logs",
+        help="Show all values in logs. By default it shows only values "
+        "which have record in database.",
     )
-
     parser.add_argument(
         "-C",
         "--csv",
+        default=True,
+        help="Output in csv format. This is default option.",
+    )
+    parser.add_argument(
+        "-j",
+        "--json",
         default=False,
         action="store_true",
-        help="output in csv format",
+        help="Output in json format. By default output is in CSV format.",
+    )
+    parser.add_argument(
+        "-u",
+        "--url",
+        help="URL of YETI instance.",
+        type=str
+    )
+    parser.add_argument(
+        "-k",
+        "--key",
+        help="API key for YETI.",
+        type=str
     )
 
     args = parser.parse_args()
