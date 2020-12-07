@@ -2,10 +2,11 @@ import argparse
 import configparser
 import collections
 import os
+import sys
 
 from logchecker.log_checker import check_log_file
 
-Config = collections.namedtuple("Config", ["url", "key"])
+Config = collections.namedtuple("Config", ["url", "key", "output"])
 
 
 def is_valid_file(parser, arg):
@@ -34,7 +35,7 @@ def main():
         "-o",
         "--output",
         help="Output file path. If file does not exist, creates new file. If not present, output is printed to stout "
-        "If not specified, output is printed to stout.",
+        "If not specified, output is printed to STDOUT.",
         type=argparse.FileType("w+"),
     )
     parser.add_argument(
@@ -69,19 +70,23 @@ def main():
         help="Show all values in logs. By default it shows only values "
         "which have record in database.",
     )
-    parser.add_argument(
+
+    group = parser.add_mutually_exclusive_group()
+    group.add_argument(
         "-C",
         "--csv",
-        default=True,
-        help="Output in csv format. This is default option.",
+        default=False,
+        action="store_true",
+        help="Output in CSV format. This is default option.",
     )
-    parser.add_argument(
+    group.add_argument(
         "-j",
         "--json",
         default=False,
         action="store_true",
-        help="Output in json format. By default output is in CSV format.",
+        help="Output in JSON format. By default output is in CSV format.",
     )
+
     parser.add_argument(
         "-u",
         "--url",
@@ -97,17 +102,34 @@ def main():
 
     args = parser.parse_args()
 
-    config = parse_config_file(args.config)
+    url = args.url
+    key = args.key
+    csv = args.csv
+    json = args.json
+    if args.config:
+        url, key, outf = parse_config_file(args.config)
+        if outf.lower() == "json":
+            json = True
+            csv = False
+        elif outf.lower() == "csv":
+            json = False
+            csv = True
+        else:
+            print("Unsupported output format. Using default", file=sys.stderr)
+            json = False
+            csv = True
+
     check_log_file(
         args.file,
-        config.url,
-        config.key,
+        url,
+        key,
         output=args.output,
         address=args.address,
         domain=args.domain,
         hash=args.hash,
         all=args.all,
-        csv=args.csv,
+        csv=csv,
+        json=json
     )
 
 
@@ -116,7 +138,8 @@ def parse_config_file(file):
     config.read_file(file)
     url = config.get("DEFAULT", "url")
     key = config.get("DEFAULT", "api_key")
-    return Config(url, key)
+    output = config.get("DEFAULT", "output_format")
+    return Config(url, key, output)
 
 
 if __name__ == "__main__":
