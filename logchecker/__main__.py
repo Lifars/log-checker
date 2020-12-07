@@ -21,7 +21,9 @@ def main():
     parser.add_argument(
         "-c",
         "--config",
-        help="Config file path. Config file should contain url of YETI database, authorization key and output format. If it is present, it overrides --url, --key and  --csv/--json options.",
+        help="Config file path. Config file should contain url of YETI database,"
+             " authorization key and output format. If it is present, it overrides"
+             " --url, --key and  --csv/--json options.",
         type=argparse.FileType("r"),
     )
     parser.add_argument(
@@ -34,7 +36,7 @@ def main():
     parser.add_argument(
         "-o",
         "--output",
-        help="Output file path. If file does not exist, creates new file. If not present, output is printed to stout "
+        help="Output file path. If file does not exist, creates new file."
         "If not specified, output is printed to STDOUT.",
         type=argparse.FileType("w+"),
     )
