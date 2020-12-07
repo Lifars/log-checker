@@ -22,8 +22,8 @@ def main():
         "-c",
         "--config",
         help="Config file path. Config file should contain url of YETI database,"
-             " authorization key and output format. If it is present, it overrides"
-             " --url, --key and  --csv/--json options.",
+        " authorization key and output format. If it is present, it overrides"
+        " --url, --key and  --csv/--json options.",
         type=argparse.FileType("r"),
     )
     parser.add_argument(

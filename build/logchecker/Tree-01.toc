@@ -1,0 +1,7 @@
+('d:\\my\\praca\\log_checker\\log_checker\\venv\\lib\\site-packages\\certifi-2020.11.8-py3.7.egg',
+ None,
+ {'*.pyd', 'EGG-INFO', '*.pyw', '*.pyc', '*.cp37-win_amd64.pyd', '*.py'},
+ 'DATA',
+ [('certifi\\cacert.pem',
+   'd:\\my\\praca\\log_checker\\log_checker\\venv\\lib\\site-packages\\certifi-2020.11.8-py3.7.egg\\certifi\\cacert.pem',
+   'DATA')])
