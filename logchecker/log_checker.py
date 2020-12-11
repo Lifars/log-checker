@@ -37,27 +37,19 @@ def check_log_file(file, url, key, **kwargs):
 
     print("writing results", file=sys.stderr)
 
-    output = kwargs.get("output", None)
+    output = kwargs.get("output", sys.stdout)
     j = kwargs.get("json", False)
-    if output:
-        if j:
-            json.dump(results, output, indent=4, sort_keys=True)
-        else:
-            fields = ["value", "tags", "created", "sources", "original_log"]
-            results = __flatten(map(__unpack_logs, map(__csv_row, results)))
-            writer = csv.DictWriter(output, fieldnames=fields, quoting=csv.QUOTE_ALL)
-            writer.writeheader()
-            writer.writerows(results)
-        output.close()
+    if j:
+        json.dump(results, output, indent=4, sort_keys=True)
     else:
-        if j:
-            print(json.dumps(results, indent=4, sort_keys=True))
-        else:
-            fields = ["value", "tags", "created", "sources", "original_log"]
-            results = __flatten(map(__unpack_logs, map(__csv_row, results)))
-            print(",".join(fields))
-            for result in results:
-                print(",".join(result.values()))
+        fields = ["value", "tags", "created", "sources", "original_log"]
+        results = __flatten(map(__unpack_logs, map(__csv_row, results)))
+        writer = csv.DictWriter(output, fieldnames=fields, quoting=csv.QUOTE_ALL)
+        writer.writeheader()
+        writer.writerows(results)
+    outfh = kwargs.get("output", None)
+    if outfh:
+        outfh.close()
 
     print("finished", file=sys.stderr)
 
