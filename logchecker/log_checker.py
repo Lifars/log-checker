@@ -37,7 +37,9 @@ def check_log_file(file, url, key, **kwargs):
 
     print("writing results", file=sys.stderr)
 
-    output = kwargs.get("output", sys.stdout)
+    output = kwargs.get("output", None)
+    if not output:
+        output = sys.stdout
     j = kwargs.get("json", False)
     if j:
         json.dump(results, output, indent=4, sort_keys=True)
