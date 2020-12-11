@@ -93,6 +93,10 @@ def main():
     parser.add_argument("-k", "--key", help="API key for YETI.", type=str)
 
     args = parser.parse_args()
+    if not (args.config or args.url):
+        parser.error(
+            "Missing URL of YETI. Use --url URL or add config file using --config CONFIG"
+        )
 
     url = args.url
     key = args.key
