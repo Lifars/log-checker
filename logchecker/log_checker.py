@@ -45,7 +45,7 @@ def check_log_file(file, url, key, **kwargs):
         else:
             fields = ["value", "tags", "created", "sources", "original_log"]
             results = __flatten(map(__unpack_logs, map(__csv_row, results)))
-            writer = csv.DictWriter(output, fieldnames=fields)
+            writer = csv.DictWriter(output, fieldnames=fields, quoting=csv.QUOTE_ALL)
             writer.writeheader()
             writer.writerows(results)
         output.close()
