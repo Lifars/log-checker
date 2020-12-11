@@ -145,9 +145,9 @@ def __csv_row(d):
 
 def __unpack_logs(d):
     result = []
-    for log in d["log"]:
+    for log in d["original_log"]:
         new = d.copy()
-        new["log"] = log
+        new["original_log"] = log
         result.append(new)
     return result
 
