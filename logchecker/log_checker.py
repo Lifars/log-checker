@@ -37,6 +37,10 @@ def check_log_file(file, url, key, **kwargs):
 
     print("writing results", file=sys.stderr)
 
+    ret = kwargs.get("ret", False)
+    if ret:
+        return results
+
     output = kwargs.get("output", None)
     if not output:
         output = sys.stdout

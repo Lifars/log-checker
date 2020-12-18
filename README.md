@@ -89,6 +89,7 @@ Parameters:
 - `all` \- If true, prints all observables even if they have no record in YETI
 - `csv` \- If true, output is in CSV format
 - `json` \- If true, output is in JSON format
+- `ret` \- If true, returns data instead of printing them
 
 `parse_log_file(log, **kwargs):`
 Extracts IP addresses, domain names and hashes from *log*. Returns list of dictionaries with observables and corresponding lines from *log*.
