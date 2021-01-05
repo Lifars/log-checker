@@ -1,4 +1,8 @@
-/venv/
-/logchecker/__pycache__/
+venv/
+__pycache__/
 .idea/
 pyeti/
+build/
+dist/
+test-data/
+*.spec

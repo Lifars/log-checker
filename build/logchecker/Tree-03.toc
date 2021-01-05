@@ -1,5 +1,0 @@
-('d:\\my\\praca\\log_checker\\log_checker\\venv\\lib\\site-packages\\chardet-3.0.4-py3.7.egg',
- None,
- {'*.pyd', 'EGG-INFO', '*.pyw', '*.pyc', '*.cp37-win_amd64.pyd', '*.py'},
- 'DATA',
- [])
