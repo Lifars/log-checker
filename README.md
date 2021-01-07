@@ -12,8 +12,6 @@ User guide
 ----------
 Log-checker supports text-based log files, Windows EVTX logs and any plaintext file. Please note that working with EVTX files in Python is slow. It can be faster to use some other tool to convert EVTX file to text file and run log-checker on that file.
 
-#### Running in command line
-
 Assume you want to check log file `auth.log`. Information needed to connect to YETI is in `config.ini`
 
 The following command will find all IP addresses, domain names and hashes in `auth.log`, check them in YETI and print information (value, tags, created, sources, original log) to STDOUT in CSV format.
@@ -71,30 +69,3 @@ Here is an example of configuration file:
 	output_format = json
 
 **Note:** Values from configuration file override values from command line arguments.
-
-#### Importing as python package
-
-Package `logchecker` has one module `log_checker` with folowing functions:
-
-`check_log_file(file, url, key, **kwargs):`
-Extracts IP addresses, domain names and hashes from *file* and check them in YETI. Prints output in CSV format. Output contains value, tags, created, sources  and original log.
-Parameters:
-- `file` \- path of log file
-- `url` \- url of YETI instance
-- `key` \- API key for YETI
-- `output` \- Output file handler. If present, print output to file instead of STDOUT
-- `address` \- If true, extracts only IP addresses
-- `domain` \- If true, extracts only domain names
-- `hash` \- If true, extracts only hashes
-- `all` \- If true, prints all observables even if they have no record in YETI
-- `csv` \- If true, output is in CSV format
-- `json` \- If true, output is in JSON format
-- `ret` \- If true, returns data instead of printing them
-
-`parse_log_file(log, **kwargs):`
-Extracts IP addresses, domain names and hashes from *log*. Returns list of dictionaries with observables and corresponding lines from *log*.
-Parameters:
-- `log` \- Log file handler
-- `address` \- If true, extracts only IP addresses
-- `domain` \- If true, extracts only domain names
-- `hash` \- If true, extracts only hashes
