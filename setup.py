@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name="log_checker",
-    version="0.0.1",
+    version="0.8",
     packages=["logchecker"],
     url="https://github.com/Lifars/log-checker",
     license="",

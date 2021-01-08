@@ -1,13 +1,32 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""Logchecker tool for scanning log files against YETI Threat Intelligence Repository.
+By LIFARS
+
+This code is licensed under MIT license (see LICENSE for details)
+"""
+
+__version__ = "0.8"
+
+__author__ = "LIFARS LLC"
+__copyright__ = "Copyright (c) 2020,2021 LIFARS LLC"
+__credits__ = ["LIFARS LLC"]
+__license__ = "MIT"
+__maintainer__ = "LIFARS LLC"
+__status__ = "Production"
+
 import argparse
-import configparser
 import collections
-import json
-import pyeti
-import re
-import Evtx.Evtx as evtx
-import os
-import sys
+import configparser
 import csv
+import json
+import os
+import re
+import sys
+
+import Evtx.Evtx as evtx
+
+import pyeti
 
 Config = collections.namedtuple("Config", ["url", "key", "output"])
 

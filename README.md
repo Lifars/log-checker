@@ -1,4 +1,4 @@
-Log-checker
+Logchecker
 ===========
 
 Getting started
@@ -10,7 +10,7 @@ Getting started
 
 User guide
 ----------
-Log-checker supports text-based log files, Windows EVTX logs and any plaintext file. Please note that working with EVTX files in Python is slow. It can be faster to use some other tool to convert EVTX file to text file and run log-checker on that file.
+Logchecker supports text-based log files, Windows EVTX logs and any plaintext file. Please note that working with EVTX files in Python is slow. It can be faster to use some other tool to convert EVTX file to text file and run `logchecker` on that file.
 
 Assume you want to check log file `auth.log`. Information needed to connect to YETI is in `config.ini`
 
