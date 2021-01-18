@@ -7,9 +7,19 @@ Getting started
 - make sure you have installed Python3
 - logchecker depends on [pyeti](https://github.com/yeti-platform/pyeti) module which is not in PyPI, however, this module should be installed directly from GitHub with any of the methods described below
 
-#### Install logchecker as a Python module and an executable script
+#### Use logchecker with installation
 
-- run `python3 setup.py install` on Linux or `setup.py install` on Windows
+- when logchecker is installed as a Python module, it also comes with `logchecker` script which could be directly executed (depending on Python installation and PATH environment variable)
+
+###### Using setup.py
+
+- download this repository as a ZIP or using `git clone https://github.com/Lifars/log-checker.git`
+- run inside of this repository command `python3 setup.py install` on Linux or `setup.py install` on Windows
+- run command `logchecker` or `python3 -m logchecker`
+
+###### Using pip3
+
+- just run command `pip3 install git+https://github.com/Lifars/log-checker.git`
 - run command `logchecker` or `python3 -m logchecker`
 
 #### Use logchecker without installation
