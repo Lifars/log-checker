@@ -9,10 +9,15 @@ setup(
     author="Lifars",
     author_email="",
     description="extracts observables from logs and checks them in YETI",
+    dependency_links=[
+        "git+https://github.com/yeti-platform/pyeti#egg=pyeti",
+    ],
     install_requires=[
         "argparse",
         "configparser",
+        "pytest",
         "python-evtx",
+        "pyeti",
     ],
-    entry_points={"console_scripts": ["logchecker=logchecker.__main__:main"]},
+    entry_points={"console_scripts": ["logchecker=logchecker:main"]},
 )

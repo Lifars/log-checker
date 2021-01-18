@@ -1,0 +1,5 @@
+argparse
+configparser
+pytest
+python-evtx
+git+https://github.com/yeti-platform/pyeti#egg=pyeti
