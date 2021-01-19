@@ -19,7 +19,7 @@ Getting started
 
 ###### Using pip3
 
-- just run command `pip3 install git+https://github.com/yeti-platform/pyeti git+https://github.com/Lifars/log-checker/`
+- just run command `pip3 install git+https://github.com/yeti-platform/pyeti git+https://github.com/Lifars/log-checker.git`
 - run command `logchecker` or `python3 -m logchecker`
 
 #### Use logchecker without installation
