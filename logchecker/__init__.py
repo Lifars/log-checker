@@ -234,7 +234,7 @@ def parse_log_file(log, **kwargs):
         "([0-9a-fA-F]{1,4}:){1,7}:"
     )
     domain_pattern = re.compile("(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?\.)+[a-z]{2,6}")
-    hash_pattern = re.compile("[0-9a-f]{64}|[0-9a-f]{40}|[0-9a-f]{32}")
+    hash_pattern = re.compile("[0-9a-fA-F]{64}|[0-9a-fA-F]{40}|[0-9a-fA-F]{32}")
     a = kwargs.get("address", False)
     d = kwargs.get("domain", False)
     h = kwargs.get("hash", False)
@@ -242,27 +242,23 @@ def parse_log_file(log, **kwargs):
     values = {}
     for line in log:
         if (not flags) or a:
-            addr = addr_pattern.search(line)
-            if addr:
-                addr = addr.group(0)
-                values.setdefault(addr, []).append(line)
+            addr = addr_pattern.findall(line)
+            for match in addr:
+                values.setdefault(match, []).append(line)
 
-            addr = ipv6_pattern.search(line)
-            if addr:
-                addr = addr.group(0)
-                values.setdefault(addr, []).append(line)
+            #addr = ipv6_pattern.findall(line)
+            #for match in addr:
+            #    values.setdefault(match.lower(), []).append(line)
 
         if (not flags) or d:
-            dom = domain_pattern.search(line)
-            if dom:
-                dom = dom.group(0)
-                values.setdefault(dom, []).append(line)
+            dom = domain_pattern.findall(line)
+            for match in dom:
+                values.setdefault(match.lower(), []).append(line)
 
         if (not flags) or h:
-            ha = hash_pattern.search(line)
-            if ha:
-                ha = ha.group(0)
-                values.setdefault(ha, []).append(line)
+            ha = hash_pattern.findall(line)
+            for match in ha:
+                values.setdefault(match.lower(), []).append(line)
 
     values.pop("schemas.microsoft.com", None)
     return values
