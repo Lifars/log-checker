@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name="log_checker",
-    version="0.8",
+    version="0.9",
     packages=["logchecker"],
     url="https://github.com/Lifars/log-checker",
     license="",
@@ -14,7 +14,7 @@ setup(
     ],
     install_requires=[
         "argparse",
-        "configparser",
+        "configparser==4.0.2",
         "pytest",
         "python-evtx",
         "pyeti",
